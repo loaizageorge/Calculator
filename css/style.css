@@ -1,0 +1,58 @@
+#calculator{
+    width:400px;
+    height: 600px;
+    background-color: black;
+    color:red;
+    margin: 0 auto;
+}
+
+.regular-btn{
+    height: 75px;
+    width: 75px;
+    margin: 10px;
+   
+}
+
+.equal-btn{
+    height: 170px;
+    width: 75px;
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.zero-btn{
+    height: 75px;
+    width: 175px;
+    margin-left: 10px;
+    margin-right: 10px;
+     
+
+}
+
+#screen-space{
+    width:400px;
+    height: 115px;
+    position: relative;
+    
+}
+
+#screen{
+    height: 85px;
+    width: 360px;
+    background-color: white;
+    position: absolute;
+    top: 20px;
+    right:20px;
+}
+
+.buttons{
+    margin-left: 5px;
+}
+
+.ac-btn,
+.ce-btn{
+    background-color: red;
+}
+
+
