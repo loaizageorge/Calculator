@@ -1,3 +1,5 @@
-$(".regular-btn").click(function(){
-   console.log(this.html);
+$(document).ready(function(){
+    $(".regular-btn").click(function(){
+   alert(this.innerHTML);
+});
 });
