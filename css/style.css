@@ -56,4 +56,15 @@
     border: none;
 }
 
+#screen{
+    font-size: 20px;
+    text-align: right;
+}
+
+#screen-top{
+    height: 100%;
+    background-color: red;
+    
+}
+
 
