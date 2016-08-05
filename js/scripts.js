@@ -1,32 +1,61 @@
 $(document).ready(function(){
-    var number = ["0"];
-    start(number);
+    
+    var stringArr = [];
+    var isResult = false;
+    $("#screen").html("0");
+    
+    $(".num-btn").click(function(){
+        if(isResult){
+            stringArr = [];
+            stringArr.push($(this).html());
+            isResult = false;
+            //alert("New Calculation");
+             $("#screen").html(stringArr);
+        }
+        else{
+           // alert("chain");
+            stringArr.push($(this).html());
+             $("#screen").html(stringArr);
+        }
+        
+    });
+    
+    $(".op-btn").click(function(){
+       //alert("operation");
+        stringArr.push($(this).html());
+       $("#screen").html(stringArr);
+        isResult = false;
+       
+    });
+    
+    $(".equal-btn").click(function(){
+        var temp = stringArr.join('');
+        var result = eval(temp);
+        stringArr = temp.split(" ");
+        $("#screen").html(result);
+        isResult = true;
+        stringArr = [];
+        stringArr.push(result);
+    });
+    
+    $("#ac-btn").click(function(){
+        stringArr = [];
+        $("#screen").html("0");
+        
+    });
+    
+    $("#ce-btn").click(function(){
+        stringArr = [];
+        $("#screen").html("0");
+        
+    });
    
 });
-
-function evaluate(number){
-    var temp = number.join('');
-    var temp1 = eval(temp);
-    $("#screen").html(temp1);
-    number = [""];
-    number.push(temp1);
-    start(number);
-}
-
-function start(number){
-    $("#screen").html(number);
+   
     
-    $(".regular-btn").click(function(){
-       
-        if($(this).html()=="="){
-           evaluate(number);
-        } else{
-        $("#screen").html(this.innerHTML);
-        number.push($(this).html());
-        }
-        console.log(number);
-    
-        
-});
-}
+  
+   
+
+
+
 
