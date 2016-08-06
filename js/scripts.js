@@ -45,7 +45,6 @@ $(document).ready(function () {
         else{
             expression.push($(this).html());
             $("#screen").html(expression);
-            
             countDigits++;
             op_recent = false;
             decimal_recent = true;
@@ -81,18 +80,25 @@ $(document).ready(function () {
     $(".equal-btn").click(function () {
         var temp = expression.join('');
         var result = eval(temp);
-        expression = temp.split(" ");
+        var temp1 = result;
         $("#screen").html(result);
         expression = [];
         expression.push(result);
+        
+        num_of_digits = [];
+        
+        
+        countDigits = result.toString().length;
         op_recent = false;
         isResult = true;
         decimal_recent = false;
+        buildingNumber = true;
     });
     $("#ac-btn").click(function () {
         expression = [];
+        num_of_digits=[];
+        countDigits =0;
         $("#screen").html("0");
-        
         op_recent = false;
         isResult = true;
         decimal_recent = false;
@@ -103,15 +109,19 @@ $(document).ready(function () {
             expression = [];
             $("#screen").html("0");
             op_recent = false;
-            isResult = true;
+            isResult = false;
             decimal_recent = false;
-            num_of_digits.pop();
+            num_of_digits=[];
+            isFloat = false;
+            countDigits =0;
             
         } else{
             if(buildingNumber){
                 num_of_digits.push(countDigits);
                 countDigits = 0;
                 buildingNumber=false;
+                decimal_recent = false;
+                
                 
             }
                 alert(num_of_digits);
@@ -120,9 +130,11 @@ $(document).ready(function () {
                 expression.splice(position,amount_to_delete);
                 $("#screen").html(expression);
                 buildingNumber=false;
-            alert(num_of_digits);
+                op_recent = false;
+                decimal_recent = false;
             
             
         }
     });
 });
+
