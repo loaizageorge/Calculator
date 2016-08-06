@@ -14,6 +14,8 @@ $(document).ready(function () {
     $(".num-btn").click(function () {
         if (isResult) {
             expression = [];
+            num_of_digits = [];
+            countDigits = 0;
             expression.push($(this).html());
             $("#screen").html(expression);
             
