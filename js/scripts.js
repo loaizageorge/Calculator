@@ -123,7 +123,7 @@ $(document).ready(function () {
 function overflowCheck(num_of_digits, count) {
     if (num_of_digits.length == 0) {
         var length = count;
-        if (length >= 12) {
+        if (length >= 10) {
             $('#ac-btn').trigger('click');
             $("#screen").html("OVERFLOW");
             return true;
@@ -134,7 +134,7 @@ function overflowCheck(num_of_digits, count) {
             return a + b;
         });
         var length = temp;
-        if (length >= 12) {
+        if (length >= 10) {
             $('#ac-btn').trigger('click');
             $("#screen").html("OVERFLOW");
             return true;
